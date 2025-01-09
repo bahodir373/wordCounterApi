@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(cors());
 app.use(bodyParser.json());
 
 app.post('/count-words', (req, res) => {
